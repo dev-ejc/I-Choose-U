@@ -7,7 +7,7 @@ import Navbar from './components/layout/Navbar'
 function App() {
   return (
     <PokemonState>
-      <div className="App">
+      <div className="App bg-primary">
         <Navbar />
         <Entry />
       </div>

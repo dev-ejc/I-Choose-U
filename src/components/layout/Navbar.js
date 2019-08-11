@@ -2,9 +2,9 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light item-center bg-primary">
-      <a class="navbar-brand" href="/">
-        ICU
+    <nav class="navbar navbar-expand-lg navbar-dark item-center bg-primary">
+      <a class="navbar-brand " href="/">
+        I CHOOSE U
       </a>
       <button
         class="navbar-toggler"

@@ -1,22 +1,22 @@
 import React, { useContext, useState } from "react";
 import PokemonContext from "../../context/pokemon/pokemonContext";
-// import AlertContext from "../../context/alert/alertContext"
+
 const Form = props => {
     const pokemonContext = useContext(PokemonContext);
-    const { getPokemon, searchPokemon, pokemon, loading } = pokemonContext;
+    const { getPokemon, randomPokemon, setCurrent } = pokemonContext;
     const [name,setName] = useState('');
     const onChange = (e) => {
         setName(e.target.value)
     }
-    const onSubmit= () => {
+    const onSubmit= (e) => {
+        e.preventDefault()
         if(name.length > 0) {
-            searchPokemon(name)
+            setCurrent(name.toLowerCase())
         } else {
-            getPokemon()
+            randomPokemon()
         }
-        
     }
-
+    
     return (
         <form onSubmit={onSubmit}>
             <div class="form-group mx-auto mt-3">

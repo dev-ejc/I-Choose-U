@@ -2,11 +2,11 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark item-center bg-primary">
-      <a class="navbar-brand " href="/">
+    <nav class="navbar navbar-expand-lg navbar-light item-center bg-primary">
+      <a class="navbar-brand" href="/">
         I CHOOSE U
       </a>
-      <button
+      {/* <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -16,7 +16,7 @@ const Navbar = () => {
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon" />
-      </button>
+      </button> */}
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">

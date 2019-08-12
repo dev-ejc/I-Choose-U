@@ -1,12 +1,17 @@
-import { GET_POKEMON, SET_LOADING, SEARCH_POKEMON } from "./types";
+import { GET_POKEMON, SET_LOADING, SET_CURRENT } from "./types";
 
 export default (state, action) => {
   switch (action.type) {
-    case SEARCH_POKEMON:
     case GET_POKEMON:
       return {
         ...state,
         pokemon: action.payload,
+        loading: false
+      };
+    case SET_CURRENT:
+      return {
+        ...state,
+        current: action.payload,
         loading: false
       };
     case SET_LOADING:

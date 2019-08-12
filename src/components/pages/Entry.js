@@ -9,7 +9,7 @@ const Entry = () => {
   const { getPokemon, pokemon, loading, current } = pokemonContext;
   useEffect(() => {
     getPokemon();
-  }, [current]);
+  }, [current]); 
     return (
       <div class="card">
         <div class="card-body">{loading || pokemon === null ?  (<div class="spinner-border text-primary" role="status">
@@ -17,7 +17,7 @@ const Entry = () => {
         </div>) : (
           <div>
             <Alert />
-          <h1 class="card-title">{pokemon.species.name}</h1>
+          <h1 class="card-title">{pokemon.species.name[0].toUpperCase() + pokemon.species.name.slice(1)}</h1>
           <Sprite sprites={pokemon.sprites} />
           <Info pokemon={pokemon}/>
           </div>

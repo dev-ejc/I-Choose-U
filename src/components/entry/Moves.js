@@ -6,7 +6,7 @@ const Moves = ({moves}) => {
         <ul class="list-group m-1">
             {moves.map(move => (
                 <li className="list-group-item">
-                    {move.move.name}
+                    {move.move.name.replace("-", " ")}
                 </li>
             ))}
         </ul>

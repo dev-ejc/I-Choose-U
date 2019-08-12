@@ -1,4 +1,4 @@
-import { GET_POKEMON, SET_LOADING, SET_CURRENT } from "./types";
+import { GET_POKEMON, STOP_LOADING, SET_LOADING, SET_CURRENT, SET_ERROR, CLEAR_ERROR } from "./types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -19,6 +19,17 @@ export default (state, action) => {
         ...state,
         loading: true
       };
+    case STOP_LOADING:
+        return {
+          ...state,
+          loading: false
+        };
+    case SET_ERROR:
+        return {...state,
+                  error: {type:action.payload.type,
+                    msg:action.payload.msg}  }
+    case CLEAR_ERROR:
+        return {...state, error: null }
     default:
       return state;
   }

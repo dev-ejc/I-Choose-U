@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useState } from "react";
 
-const Sprite = ({sprites}) => {
-    return (
-      <div className="container m-2">
-        <img
-          src={sprites["front_default"]}
-          style={{ width: "50%", height: "auto" }}
-          class="card-img-top"
-          alt="sprite"
-        />
+const Sprite = ({ sprites }) => {
+  const [shiny, setShiny] = useState(true);
+  return (
+    <div className="container mb-1">
+      <img
+        src={shiny ? sprites["front_shiny"] : sprites["front_default"]}
+        style={{ width: "50%", height: "auto" }}
+        class="card-img-top"
+        alt="sprite"
+      />
+      <button
+        onClick={() => setShiny(!shiny)}
+        class="btn btn-info form-control"
+      >
+        Shiny
+      </button>
       </div>
-    );
+  );
 };
 
 export default Sprite;

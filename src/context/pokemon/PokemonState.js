@@ -2,12 +2,13 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import PokemonContext from "./pokemonContext";
 import pokemonReducer from "./pokemonReducer";
-import { GET_POKEMON, SET_LOADING, SET_CURRENT } from "./types";
+import { GET_POKEMON, SET_LOADING, SET_CURRENT, SET_ERROR, CLEAR_ERROR, STOP_LOADING } from "./types";
 
 const PokemonState = props => {
   const initialState = {
-    current: 'breloom',
+    current: "breloom",
     pokemon: null,
+    error:null,
     loading: false
   };
 
@@ -15,14 +16,17 @@ const PokemonState = props => {
 
   const getPokemon = () => {
     setLoading();
-    console.log(state.current)
+    console.log(state.current);
     const abortController = new AbortController();
     const signal = abortController.signal;
     const config = {
       signal
     };
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${state.current.toString()}/`, config)
+      .get(
+        `https://pokeapi.co/api/v2/pokemon/${state.current.toString()}/`,
+        config
+      )
       .then(res => {
         dispatch({
           type: GET_POKEMON,
@@ -31,17 +35,16 @@ const PokemonState = props => {
         abortController.abort();
       })
       .catch(err => {
-        console.log(err.message);
+        setError("danger", "Pokemon does not exist"
+        );
+        stopLoading()
         abortController.abort();
       });
   };
 
   const randomPokemon = () => {
     const n = Math.floor(Math.random() * Math.floor(809));
-    dispatch({
-      type: SET_CURRENT,
-      payload: n
-    });
+    setCurrent(n)
   };
 
   const setCurrent = current => {
@@ -57,12 +60,31 @@ const PokemonState = props => {
     });
   };
 
+  const stopLoading = () => {
+    dispatch({
+      type: STOP_LOADING
+    });
+  };
+
+
+  const clearError = () => {
+    dispatch({ type: CLEAR_ERROR });
+  };
+
+  const setError = (type, msg) => {
+    dispatch({ type: SET_ERROR, payload: { type, msg } });
+    setTimeout(() => {
+      clearError();
+    }, 5000);
+  };
+
   return (
     <PokemonContext.Provider
       value={{
         pokemon: state.pokemon,
         loading: state.loading,
         current: state.current,
+        error: state.error,
         setCurrent,
         getPokemon,
         randomPokemon

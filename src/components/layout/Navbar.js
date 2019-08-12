@@ -1,11 +1,12 @@
 import React from "react";
-
+import Form from '../entry/Form'
 const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light item-center bg-primary">
-      <a class="navbar-brand" href="/">
+      <h1 class="navbar-brand text-light">
         I CHOOSE U
-      </a>
+      </h1>
+      <Form />
       {/* <button
         class="navbar-toggler"
         type="button"

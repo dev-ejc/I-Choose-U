@@ -12,6 +12,7 @@ const Form = props => {
         e.preventDefault()
         if(name.length > 0) {
             setCurrent(name.toLowerCase())
+            setName('')
         } else {
             randomPokemon()
         }

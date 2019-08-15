@@ -3,10 +3,10 @@ import Form from '../entry/Form'
 const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light item-center bg-primary">
-      <h1 class="navbar-brand text-light">
+      <h1 class="navbar-brand text-center text-light">
         I CHOOSE U
       </h1>
-      <Form />
+      {/* <Form /> */}
       {/* <button
         class="navbar-toggler"
         type="button"

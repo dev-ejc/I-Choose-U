@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar'
 import Copyright from "./components/layout/Copyright"
 import Form from './components/entry/Form'
 function App() {
-  //branching
+  //prod
   return (
     <PokemonState>
       <div className="App bg-primary">

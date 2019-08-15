@@ -12,7 +12,7 @@ const Sprite = ({ sprites }) => {
       />
       <button
         onClick={() => setShiny(!shiny)}
-        class={`btn btn-${shiny ? "info" : "primary"} form-control`}
+        class={`btn btn-info form-control`}
       >
         {shiny ? "Shiny" : "Default"}
       </button>

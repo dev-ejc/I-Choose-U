@@ -6,7 +6,7 @@ const Navbar = () => {
       <h1 class="navbar-brand mx-auto text-light">
         I CHOOSE U
       </h1>
-      {/* <Form /> */}
+      <Form />
       {/* <button
         class="navbar-toggler"
         type="button"

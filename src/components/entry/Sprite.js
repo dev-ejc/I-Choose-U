@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 
 const Sprite = ({ sprites }) => {
-  const [shiny, setShiny] = useState(true);
+  const [shiny, setShiny] = useState(false);
   return (
     <div className="container mb-1">
       <img

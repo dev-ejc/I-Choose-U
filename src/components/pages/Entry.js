@@ -22,7 +22,7 @@ const Entry = () => {
           <Info pokemon={pokemon}/>
           </div>
         )}
-        <Form />
+        {/* <Form /> */}
         </div>
     </div>
     );

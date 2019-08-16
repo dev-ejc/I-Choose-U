@@ -17,7 +17,7 @@ const Stat = () => {
                 <tbody>
                     {pokemon.stats.map(stat => {
                         return (<tr key={stat.stat.name.toUpperCase()}>
-                            <td>{stat.stat.name.replace("-", " ")[0]}</td>
+                            <td>{stat.stat.name.replace("-", " ")}</td>
                             <td>{stat["base_stat"]}</td>
                         </tr>)
                     })}

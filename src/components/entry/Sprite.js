@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 
 const Sprite = ({ sprites }) => {
-  const [shiny, setShiny] = useState(true);
+  const [shiny, setShiny] = useState(false);
   return (
     <div className="container mb-1">
       <img
@@ -12,9 +12,9 @@ const Sprite = ({ sprites }) => {
       />
       <button
         onClick={() => setShiny(!shiny)}
-        class="btn btn-info form-control"
+        class={`btn btn-info form-control`}
       >
-        Shiny
+        {shiny ? "Shiny" : "Default"}
       </button>
       </div>
   );

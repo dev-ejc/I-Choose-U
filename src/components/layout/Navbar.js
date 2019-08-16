@@ -3,7 +3,7 @@ import Form from '../entry/Form'
 const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-light item-center bg-primary">
-      <h1 class="navbar-brand text-light mx-auto">
+      <h1 class="navbar-brand mx-auto text-light">
         I CHOOSE U
       </h1>
       <Form />

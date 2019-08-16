@@ -20,7 +20,7 @@ const Form = props => {
     return (
         <form className="form-inline mx-auto" onSubmit={onSubmit}>
             <input onChange={onChange} type='text' className="form-control" type="text" placeholder="Search" />
-            <button type="submit" class="btn btn-primary btn-block">{name.length > 0 ? "Submit" : "Random"}</button>
+            <button type="submit" class="btn btn-primary form-control">{name.length > 0 ? "Submit" : "Random"}</button>
         </form>
     )
 }

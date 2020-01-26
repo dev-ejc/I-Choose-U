@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# random stuff
+package-lock.json
+.gitignore
+._package-lock.json
+._package.json
+.devcontainer/

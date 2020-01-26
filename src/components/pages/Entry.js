@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import PokemonContext from "../../context/pokemon/pokemonContext";
 import Sprite from "../entry/Sprite";
-import Form from "../entry/Form";
+// import Form from "../entry/Form";
 import Info from "../entry/Info";
 import Alert from '../alerts/Alert.js'
 const Entry = () => {
